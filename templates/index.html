@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Accessories - Bike Spare Parts Management</title>
+    <meta name="description" content="Premium bike spare parts shop management system with POS billing, inventory, and reporting">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- ─── TOP HEADER BAR ──────────────────────────────── -->
+    <header class="app-header">
+        <div class="app-brand">
+            <i class="ri-motorbike-fill"></i>
+            <span>FLASH ACCESSORIES</span>
+        </div>
+        <div class="header-actions">
+            <button class="btn-icon" title="Backup" onclick="App.showNotification('Backup feature coming soon', 'info')">
+                <i class="ri-database-2-line"></i>
+            </button>
+            <button class="btn-icon" title="Home" onclick="App.navigate('dashboard')">
+                <i class="ri-home-4-fill"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ─── NAVIGATION TOOLBAR ──────────────────────────── -->
+    <nav class="toolbar" id="mainToolbar">
+        <button class="toolbar-btn active" data-module="dashboard" onclick="App.navigate('dashboard')">
+            <i class="ri-dashboard-fill"></i>
+            <span>HOME</span>
+        </button>
+        <button class="toolbar-btn" data-module="product" onclick="App.navigate('product')">
+            <i class="ri-shopping-bag-fill"></i>
+            <span>PRODUCT</span>
+        </button>
+        <button class="toolbar-btn" data-module="purchase" onclick="App.navigate('purchase')">
+            <i class="ri-shopping-cart-fill"></i>
+            <span>PURCHASE</span>
+        </button>
+        <button class="toolbar-btn" data-module="billing" onclick="App.navigate('billing')">
+            <i class="ri-bill-fill"></i>
+            <span>BILLING</span>
+        </button>
+        <button class="toolbar-btn" data-module="customer" onclick="App.navigate('customer')">
+            <i class="ri-group-fill"></i>
+            <span>CUSTOMER</span>
+        </button>
+        <button class="toolbar-btn" data-module="supplier" onclick="App.navigate('supplier')">
+            <i class="ri-truck-fill"></i>
+            <span>SUPPLIER</span>
+        </button>
+        <button class="toolbar-btn" data-module="payment" onclick="App.navigate('payment')">
+            <i class="ri-money-rupee-circle-fill"></i>
+            <span>PAYMENT</span>
+        </button>
+        <button class="toolbar-btn" data-module="receipt" onclick="App.navigate('receipt')">
+            <i class="ri-file-text-fill"></i>
+            <span>RECEIPT</span>
+        </button>
+        <button class="toolbar-btn" data-module="stock" onclick="App.navigate('stock')">
+            <i class="ri-archive-fill"></i>
+            <span>STOCK</span>
+        </button>
+        <button class="toolbar-btn" data-module="reprint" onclick="App.navigate('reprint')">
+            <i class="ri-printer-fill"></i>
+            <span>REPRINT</span>
+        </button>
+        <button class="toolbar-btn" data-module="barcode" onclick="App.navigate('barcode')">
+            <i class="ri-barcode-fill"></i>
+            <span>BARCODE</span>
+        </button>
+        <button class="toolbar-btn" data-module="report" onclick="App.navigate('report')">
+            <i class="ri-bar-chart-grouped-fill"></i>
+            <span>REPORT</span>
+        </button>
+    </nav>
+
+    <!-- ─── MAIN CONTENT AREA ───────────────────────────── -->
+    <main class="content" id="mainContent">
+        <!-- Modules will render here -->
+    </main>
+
+    <!-- ─── STATUS BAR ──────────────────────────────────── -->
+    <footer class="status-bar">
+        <div class="status-left">
+            <span class="status-item"><i class="ri-user-fill"></i> LogOn : ADMIN</span>
+            <span class="status-item">Flash Accessories v2.0</span>
+        </div>
+        <div class="status-right">
+            <span class="status-item" id="statusTime"></span>
+        </div>
+    </footer>
+
+    <!-- ─── NOTIFICATION TOAST ──────────────────────────── -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ─── MODAL OVERLAY ───────────────────────────────── -->
+    <div class="modal-overlay" id="modalOverlay" onclick="App.closeModal()">
+        <div class="modal" id="modalContent" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 id="modalTitle">Modal</h3>
+                <button class="btn-icon" onclick="App.closeModal()"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- ─── SCRIPTS ─────────────────────────────────────── -->
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/modules/dashboard.js"></script>
+    <script src="/static/js/modules/product.js"></script>
+    <script src="/static/js/modules/purchase.js"></script>
+    <script src="/static/js/modules/billing.js"></script>
+    <script src="/static/js/modules/customer.js"></script>
+    <script src="/static/js/modules/supplier.js"></script>
+    <script src="/static/js/modules/payment.js"></script>
+    <script src="/static/js/modules/receipt.js"></script>
+    <script src="/static/js/modules/stock.js"></script>
+    <script src="/static/js/modules/reprint.js"></script>
+    <script src="/static/js/modules/barcode.js"></script>
+    <script src="/static/js/modules/report.js"></script>
+</body>
+</html>
